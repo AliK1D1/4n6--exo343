@@ -39,8 +39,8 @@ class MainActivity : AppCompatActivity() {
 
     private fun doubler(numero: Int) {
         val service = RetrofitUtil.get()
-        service.truc(numero).enqueue(object : Callback<Int> {
-            override fun onResponse(call: Call<Int>, response: Response<Int>) {
+        service.truc(numero).enqueue(object : Callback<List<repr>> {
+            override fun onResponse(call: Call<List<repr>>, response: Response<List<repr>>) {
                 if (response.isSuccessful) {
                     val doubledValue = response.body()
                     Toast.makeText(this@MainActivity, "Doubled value: $doubledValue", Toast.LENGTH_SHORT).show()
@@ -49,7 +49,7 @@ class MainActivity : AppCompatActivity() {
                 }
             }
 
-            override fun onFailure(call: Call<Int>, t: Throwable) {
+            override fun onFailure(call: Call<List<repr>>, t: Throwable) {
                 Toast.makeText(this@MainActivity, "Failure: ${t.message}", Toast.LENGTH_SHORT).show()
             }
         })
