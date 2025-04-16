@@ -1,0 +1,6 @@
+controller -> exam -> implementer un controller 
+
+1.verfier if tache extist dans la bd, id 
+2.verifier si tache appartient a user
+3.si ca marche effacer a partir de id
+4.enelever la tache dans la liste des taches du user
